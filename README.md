@@ -14,7 +14,7 @@
 #Installation
 - Clone the repository
 ```bash
-git clone https://github.com/pimpmasterplayboy/port-scanner.git
+git clone https://github.com/pimpmasterplayboy47/port-scanner.git
 cd port-scanner
 ```
 - (Optional) Make the script executable
