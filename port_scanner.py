@@ -1,24 +1,10 @@
 #!/usr/bin/env python3
-"""
-Port Scanner - A simple TCP port scanner that checks for open ports on a target host.
-"""
-
 import socket
 import sys
 from datetime import datetime
 
 def scan_port(target_ip, port, timeout=1):
-    """
-    Scan a single port on the target IP.
 
-    Args:
-        target_ip (str): The IP address to scan
-        port (int): The port number to scan
-        timeout (float): Connection timeout in seconds
-
-    Returns:
-        bool: True if port is open, False otherwise
-    """
     try:
         # Create a socket object
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,15 +27,7 @@ def scan_port(target_ip, port, timeout=1):
         return False
 
 def validate_ip(ip):
-    """
-    Validate an IP address format.
 
-    Args:
-        ip (str): IP address string to validate
-
-    Returns:
-        bool: True if valid IPv4 address, False otherwise
-    """
     try:
         socket.inet_aton(ip)
         return True
@@ -57,16 +35,7 @@ def validate_ip(ip):
         return False
 
 def validate_port_range(start_port, end_port):
-    """
-    Validate port range.
 
-    Args:
-        start_port (int): Starting port number
-        end_port (int): Ending port number
-
-    Returns:
-        bool: True if valid range, False otherwise
-    """
     return (1 <= start_port <= 65535 and
             1 <= end_port <= 65535 and
             start_port <= end_port)
